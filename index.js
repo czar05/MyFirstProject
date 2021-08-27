@@ -55,9 +55,24 @@ app.post('/create-todolist', function(req, res){
      
        return res.redirect('back');
      });
-   
+    });
      
-   });
+   
+
+  
+   app.post('/delete-task', function(req, res){
+   
+    let id = req.body.selecttodo;
+    
+    Todo.deleteMany({_id : id}, function(err){
+        if(err){
+            console.log('error in deleting an object from database');
+            return;
+        }
+        return res.redirect('back');
+    });
+    
+}); 
 
 
 /*app.post('/create-todolist', function(req, res){

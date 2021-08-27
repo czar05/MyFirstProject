@@ -28,13 +28,13 @@
             <button type="submit">ADD TASK</button>
         </form>
         
-        <div class="button">
-           
-            <button type="submit">DELETE TASKS</button>
-        </div>
-
+        
         <div>
+           <form action="/delete-task" method="POST">
+            <div class="button">
            
+                <button type="submit"> DELETE TASKS</button>
+            </div>
                         <% if(locals.Todo_list){%>
                               <% for(let i of locals.Todo_list){ %>
                                 <div class="container-fluid">
@@ -44,14 +44,15 @@
                                                 <div class="card-horizontal">
                                                    
                                                     <div class="card-body">
-                                                       <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                  <label for="vehicle1"> </label><br>
+                                                       <input type="checkbox" value="<%= i._id %>" name="selecttodo">
+                                 
                               <p>   <%= i.description %> </p>
                                  
                                <p>   <%= i.duedate %> </p>
                                   <div class="category">
                                     <p> <%= i.category %> </p>
                                 </div>
+                                
                             </div>
                         </div>
                       
@@ -65,5 +66,6 @@
                           <%}%>
                
         </div>
+    </form>
     </body>
 </html>
