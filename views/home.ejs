@@ -7,16 +7,20 @@
     </head>
     <body>
         <h1>
-            <%= title %>
+            TODO App
         </h1>
+        <hr>
         <form id="new-form" action="/create-todolist" method="POST">  
-            <h3> DESCRIPTION</h3>
+          
+           <div id="des"><h3> DESCRIPTION</h3>
             <input type="text" name="description" placeholder="What do you need to do?" >
-      
-      
+            <hr>
+        </div> 
+          <div id="cat">
             <h3>CATEGORY</h3>
             <label for="category">Choose a category:</label>
             <select name="category" id="category">
+                
                 <option value="Personal">Personal</option>
                 <option value="Work">Work</option>
                 <option value="School">School</option>
@@ -25,47 +29,44 @@
               </select>
             <h3>DUEDATE</h3>
             <input type="date" name="duedate">
-            <button type="submit">ADD TASK</button>
+            
+        </div>
+        <hr>
+        
+        <div class="button1">
+            <button type="submit" id="sub">ADD TASK</button>
+            
+            </div>
         </form>
         
         
-        <div>
+        
            <form action="/delete-task" method="POST">
-            <div class="button">
+            <div class="button2">
            
-                <button type="submit"> DELETE TASKS</button>
+                <button type="submit" id="del"> DELETE TASKS</button>
+                
             </div>
+            
                         <% if(locals.Todo_list){%>
                               <% for(let i of locals.Todo_list){ %>
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-12 mt-3">
-                                            <div class="card">
-                                                <div class="card-horizontal">
-                                                   
-                                                    <div class="card-body">
-                                                       <input type="checkbox" value="<%= i._id %>" name="selecttodo">
+                              
+                        <div id="card">    
+                         <input type="checkbox" value="<%= i._id %>" name="selecttodo">
                                  
-                              <p>   <%= i.description %> </p>
-                                 
-                               <p>   <%= i.duedate %> </p>
-                                  <div class="category">
-                                    <p> <%= i.category %> </p>
-                                </div>
+                             <p>   <%= i.description %> </p>
                                 
+                             <p>   <%= i.duedate %> </p>
+                                  <div id="category1">
+                             <p> <%= i.category %> </p>
                             </div>
-                        </div>
-                      
-                    </div>
-                </div>
-            </div>
-        </div>
+                            </div>
                               <%}%>
-                      <%}else{%>
+                            <%}else{%>
                             
-                          <%}%>
+                             <%}%>
                
-        </div>
+        
     </form>
     </body>
 </html>

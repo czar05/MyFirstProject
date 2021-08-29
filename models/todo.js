@@ -21,7 +21,7 @@ function formatDate(date) {
      },
      category: {
         type: String,
-        enum: ['Personal', 'Work', 'School', 'Cleaning', 'Other'],
+        enum: ['Personal', 'Work', 'School', 'Cleaning','Other'],
         required : true 
     },
     duedate:{

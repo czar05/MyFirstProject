@@ -1,10 +1,67 @@
-.card-horizontal {
+body{
+   margin-left: 20%;
+   margin-right: 20%;
+  
+   
+}
+#category1{
+    position: relative;
+    
+    left: 85%;
+   background-color: blue;
+   display: inline-block;
+   width: 100px;
+   text-align: center;
+   
+}
+#card{
+    
+    background-color: yellow;
+    display: block;
+}
+#category{
+    border-style: unset;
+}
+h1{
+    text-align: center;
+    color: brown;
+}
+
+#des{
+    display: block;
+}
+#cat{
     display: flex;
-    flex: 1 1 auto;
+    justify-content: space-evenly;
 }
-.category{
-    background-color:yellow;
-    position:absolute;
-    right:10%;
-    top:10%;
+.button1{
+    position: absolute;
+    left: 40%;
+    color: brown;
+    width: 300px;
+    height: 60px;
+
 }
+.button2{
+    position: absolute;
+    left: 60%;
+    width: 300px;
+    height: 60px;
+}
+#sub{
+    background-color: brown;
+   color: white;
+    
+}
+#del{
+    background-color: red;
+    color: white;
+}
+input{
+    border-style: unset;
+    border-color: unset;
+}
+::placeholder {
+     opacity: 0.4;
+    
+  }
